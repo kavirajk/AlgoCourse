@@ -1,0 +1,22 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+long karat(long x,long y);
+
+long getInteger();
+
+int main() {
+  cout<<"Int x: ";
+  long x=getInteger();
+  cout<<"Int y: ";
+  long y=getInteger();
+  cout<<karat(x,y)<<endl;
+
+  return 0;
+}
+
+long getInteger() {
+  stringstream converter;
+}
