@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 scratch*
 *~
 *.out
+=======
+./scratch/*
+*.*~
+./a.out
+>>>>>>> dd872ec07d657e860473c2fd42eb765b672a9949
