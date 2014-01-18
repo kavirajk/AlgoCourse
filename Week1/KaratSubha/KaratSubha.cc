@@ -1,43 +1,32 @@
 #include <iostream>
 #include <cmath>
 #include <sstream>
+#include <fstream>
+#include <iterator>
 
 using namespace std;
 
-long karat(long x,long y);
+const string i_file="data.txt";
+const string o_file="output_better.txt";
 
-long getInteger();
+long karat(long x,long y);
 
 long length(long x);
 
 int main() {
-  cout<<"Int x: ";
-  long x=getInteger();
-  cout<<"Int y: ";
-  long y=getInteger();
-  cout<<karat(x,y)<<endl;
+
+  ifstream input(i_file.c_str());
+  ofstream output(o_file.c_str());
+  long x,y;
+  
+  while(input>>x>>y) {
+    output<<karat(x,y)<<endl;
+  }
+
+  input.close();
+  output.close();
 
   return 0;
-}
-
-long getInteger() {
-  while(1) {
-    stringstream converter;
-    string line;
-    long result;
-    getline(cin,line);
-    converter<<line;
-    converter>>result;
-    if(converter.fail()) {
-      cout<<"Invalid integer type, Try again\n";
-    }
-    string dummy;
-    converter>>dummy;
-    if(converter.fail()) {
-      return result;
-    }
-    cout<<"Invalid token '"<<dummy<<"', Try again\n";
-  }
 }
 
 long karat(long x,long y) {
