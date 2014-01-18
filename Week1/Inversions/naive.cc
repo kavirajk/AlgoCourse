@@ -17,6 +17,9 @@ int main() {
   copy(istream_iterator<int>(input),istream_iterator<int>(),back_inserter(v));
   output<<findInversions(v)<<endl;
 
+  input.close();
+  output.close();
+
   return 0;
 }
 

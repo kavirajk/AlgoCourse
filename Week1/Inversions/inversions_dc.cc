@@ -18,7 +18,10 @@ int main() {
   
   vector<int> v;
   copy(istream_iterator<int>(input),istream_iterator<int>(),back_inserter(v));
-  cout<<sort_count(v)<<endl;
+  output<<sort_count(v)<<endl;
+
+  input.close();
+  output.close();
 
   return 0;
 }
