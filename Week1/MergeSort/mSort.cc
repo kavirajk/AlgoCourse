@@ -2,16 +2,24 @@
 #include <iostream>
 #include <algorithm>
 #include <iterator>
+#include <fstream>
 
 using namespace std;
+
+const string i_file="data.txt";
+const string o_file="output_better.txt";
 
 void mSort(vector<int> &v);
 void merge(const vector<int> &left,const vector<int> &right,vector<int> &output);
 
 int main() {
-  vector<int> v {3,8,1,9,4,7,2};
+  vector<int> v;
+  ifstream input(i_file.c_str());
+  ofstream output(o_file.c_str());
+  
+  copy(istream_iterator<int>(input),istream_iterator<int>(),back_inserter(v));
   mSort(v);
-  copy(v.begin(),v.end(),ostream_iterator<int>(cout,"\n"));
+  copy(v.begin(),v.end(),ostream_iterator<int>(output,"\n"));
 
   return 0;
 }
