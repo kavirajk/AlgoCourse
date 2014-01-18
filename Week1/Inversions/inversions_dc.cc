@@ -6,16 +6,19 @@
 
 using namespace std;
 
-const string file="data.txt";
+const string i_file="data.txt";
+const string o_file="output_better.txt";
 
 size_t sort_count(vector<int> &v);
 size_t merge_count_split(const vector<int> &left,const vector<int> &right,vector<int> &output);
 
 int main() {
-  ifstream input(file.c_str());
+  ifstream input(i_file.c_str());
+  ofstream output(o_file.c_str());
+  
   vector<int> v;
   copy(istream_iterator<int>(input),istream_iterator<int>(),back_inserter(v));
-  cout<<"Inversions count: "<<sort_count(v)<<endl;
+  cout<<sort_count(v)<<endl;
 
   return 0;
 }

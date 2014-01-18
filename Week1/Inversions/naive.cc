@@ -6,13 +6,16 @@
 
 using namespace std;
 
-const string file="data.txt";
+const string i_file="data.txt";
+const string o_file="output_naive.txt";
+
 int findInversions(vector<int> v);
 int main() {
-  ifstream input(file.c_str());
+  ifstream input(i_file.c_str());
+  ofstream output(o_file.c_str());
   vector<int> v;
   copy(istream_iterator<int>(input),istream_iterator<int>(),back_inserter(v));
-  cout<<findInversions(v)<<endl;
+  output<<findInversions(v)<<endl;
 
   return 0;
 }
