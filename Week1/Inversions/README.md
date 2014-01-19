@@ -5,7 +5,7 @@ Find the inversions of a given array.
 
 Inversions of a Array A is defined as the no of elements contained in the array A satisfying the below condition
 
-for all pair i &lt j, A[i] &gt A[j] 
+for all pair <pre> i < j, A[i] > A[j] </pre> 
 
 ###Motivation:
 Have you ever wondered how while purchasing online, it suggests you the product that you are really interested in?. How does an website knows your taste?. Inversions is lying underhood in this problem.
