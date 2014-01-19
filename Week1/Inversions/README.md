@@ -1,12 +1,11 @@
-
-> Come to this problem after fully understanding the Merge Sort.
+> <strong>Come to this problem after fully understanding the Merge Sort.</strong>
 
 ###Problem Statement:
 Find the inversions of a given array.
 
 Inversions of a Array A is defined as the no of elements contained in the array A satisfying the below condition
 
-for all pair i<j, A[i] > A[j] 
+for all pair i &lt j, A[i] &gt A[j] 
 
 ###Motivation:
 Have you ever wondered how while purchasing online, it suggests you the product that you are really interested in?. How does an website knows your taste?. Inversions is lying underhood in this problem.
