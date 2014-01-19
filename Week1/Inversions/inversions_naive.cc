@@ -1,12 +1,17 @@
 #include<iostream>
 #include<vector>
+#include<iterator>
+#include<fstream>
+#include<string>
 
 using namespace std;
 
+const string file="data.txt";
 int findInversions(vector<int> v);
-
 int main() {
-  vector<int> v {1,3,5,2,4,6};
+  ifstream input(file.c_str());
+  vector<int> v;
+  copy(istream_iterator<int>(input),istream_iterator<int>(),back_inserter(v));
   cout<<findInversions(v)<<endl;
 
   return 0;

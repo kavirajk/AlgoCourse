@@ -2,14 +2,19 @@
 #include <iostream>
 #include <algorithm>
 #include <iterator>
+#include <fstream>
 
 using namespace std;
+
+const string file="data.txt";
 
 size_t sort_count(vector<int> &v);
 size_t merge_count_split(const vector<int> &left,const vector<int> &right,vector<int> &output);
 
 int main() {
-  vector<int> v {6,5,4,3,2,1};
+  ifstream input(file.c_str());
+  vector<int> v;
+  copy(istream_iterator<int>(input),istream_iterator<int>(),back_inserter(v));
   cout<<"Inversions count: "<<sort_count(v)<<endl;
 
   return 0;
