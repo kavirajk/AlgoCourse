@@ -17,7 +17,7 @@ You have ranked 6 movies based on your taste. That movies be ordered based on yo
 All we need to do is just count the no of pairs satisfing the condition in the problem statement. In other words, count the no of pairs that are not in sorted order.
 
 
-### Better Solution (Piggybacking on Merge Sort): `Run time: O(nlogn)`
+### Better Solution (Piggyback on Merge Sort): `Run time: O(nlogn)`
 
 
 ###Benchmark:
