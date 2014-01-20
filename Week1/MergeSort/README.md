@@ -13,3 +13,18 @@ better than naive sorting technique like insertion, selection or bubble sort.
 Uses divide and conquer 
 
 ###Benchmark:
+<pre>
+bash-4.2$ g++ naive.cc -o naive
+bash-4.2$ time ./naive
+
+real    0m1.104s
+user    0m0.961s
+sys     0m0.018s
+
+bash-4.2$ g++ mSort.cc -o merge
+bash-4.2$ time ./merge 
+
+real    0m0.047s
+user    0m0.034s
+sys     0m0.005s
+</pre>
