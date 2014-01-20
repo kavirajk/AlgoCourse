@@ -34,3 +34,18 @@ then A=56, B=78, C=12, D=34 (Divide)
 </pre>
 
 ###Benchmark:
+<pre>
+bash$ g++ naive.cc -o naive
+bash$ time ./naive
+
+real    0m0.471s
+user    0m0.341s
+sys     0m0.129s
+
+bash$ g++ KaratSubha.cc -o karat
+bash$ time ./karat
+
+real    0m0.210s
+user    0m0.108s
+sys     0m0.101s
+</pre>
