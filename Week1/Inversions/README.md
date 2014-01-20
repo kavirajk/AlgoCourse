@@ -18,6 +18,21 @@ All we need to do is just count the no of pairs satisfing the condition in the p
 
 
 ### Better Solution (Piggyback on Merge Sort): `Run time: O(nlogn)`
-
+We use the subroutine "merge" from the merge sort to obtain the inversion of an array. For detail explanation go through couse video.
 
 ###Benchmark:
+<pre>
+bash-4.2$ g++ naive.cc -o naive
+bash-4.2$ time ./naive
+
+real    0m0.721s
+user    0m0.621s
+sys     0m0.006s
+bash-4.2$ g++ inversions_dc.cc -o dc
+bash-4.2$ time ./dc
+
+real    0m0.038s
+user    0m0.026s
+sys     0m0.006s
+bash-4.2$ 
+</pre>
