@@ -13,7 +13,8 @@ for(int i=0;i &lt n;++i)
 
 </pre>
 ### Better Solution ([StrassenAlgorithm](http://en.wikipedia.org/wiki/Strassen_algorithm)): `Run time: O(n^2.8)`
-We use the divide and conquer approach to 
+We use the divide and conquer approach to multiply two matrix of dimensions n x n. Strassen Algorithm is very clear and
+totally non-obvious algorithm in solving this problem with better runtime than the naive one.
 
 ###Benchmark:
 <pre>
