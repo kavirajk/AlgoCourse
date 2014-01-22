@@ -73,12 +73,6 @@ matrix strassMultiply( const matrix& X, const matrix& Y,size_t n) {
   matrix B,C,D,E,F,G,H,P1,P2,P3,P4,P5,P6,P7,C1,C2,C3,C4,tmp1,tmp2;
   B=C=D=E=F=G=H=P1=P2=P3=P4=P5=P6=P7=C1=C2=C3=C4=tmp1=tmp2=A;
 
-  cout<<"Debugging\n";
-  size_t len=X.size();
-  for(int i=0;i<len;i++) {
-    cout<<X[i]<<endl;
-  }
-
   divide(X,A,B,C,D,n);
   divide(Y,E,F,G,H,n);
 
