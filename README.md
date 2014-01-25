@@ -4,7 +4,7 @@
 This repo contains implementation of programs that are taught in [Stanford Algorithm Course](https://www.coursera.org/course/algo).It is only for learning and education purpose.Contributions are welcome.
 
 ###README.md Contents
-Each and every problem in this repo has README.md that will help in understanding solution to the problem with following sections.
+Every problem in this repo have README.md that will help in understanding solution to the problem with following sections.
 <pre>
 * Problem statement - Defines the problem
 * Motivation        - Why you need to solve the problem after all?
@@ -14,7 +14,7 @@ Each and every problem in this repo has README.md that will help in understandin
 </pre>
 ###Files
 
-Each problem have following files
+Every problem have following files
 <pre>
 * README.md       - Helps in understanding the problem
 * naive.cc        - Implementation of naive solution for the problem
