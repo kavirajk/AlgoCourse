@@ -19,7 +19,7 @@ Why study karatsubha algorithm after all?. The secret is it is faster than the o
 
 </pre>
 
-### Better Solution ([Karatsubha](http://en.wikipedia.org/wiki/Karatsuba_algorithm)): `Run time: O(nlogn)`
+### Better Solution ([Karatsubha](http://en.wikipedia.org/wiki/Karatsuba_algorithm)): `Run time: O(n^1.585)`
 
 <pre>
 Let X and Y be two n-digit integers
