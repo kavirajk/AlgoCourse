@@ -1,5 +1,6 @@
 ###Problem Statement:
-Sort the given array(say A) in an increasing order. Such that for all i<j, A[i] < A[j]
+To find the closest pair of points in the collection of given points (say P). The distance between two points is a simple
+(euclidiean distance)[http://en.wikipedia.org/wiki/Euclidean_distance].
 
 ###Motivation:
 Sorting is one of the most fundamental problem in computer science. 
