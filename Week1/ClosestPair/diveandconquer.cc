@@ -28,6 +28,10 @@ ofstream& operator<<(ofstream& out,const p_point& p);
 p_point computeBase(const vector<point>& px,const vector<point>& py,double& closest_distance);
 double computeDistance(const point& a,const point&b);
 
+bool comparePoint(const p_point& a,const p_point& b) {
+  return computeDistance(a.first,a.second) < computeDistance(b.first,b.second);
+}
+
 int main() {
   ifstream input(i_file.c_str());
   ofstream output(o_file.c_str());
@@ -90,7 +94,7 @@ p_point closestPair(const vector<point>& px,const vector<point>& py,double& clos
   r_closest_pair=closestPair(rx,ry,r_closest_distance);
 
   min_closest_distance=min(l_closest_distance,r_closest_distance);
-  min_closest_pair=min(l_closest_pair,r_closest_pair);
+  min_closest_pair=min(l_closest_pair,r_closest_pair,comparePoint);
   
   split_closest_pair=closestSplitPair(px,py,split_closest_distance,min_closest_distance);
 
@@ -100,6 +104,8 @@ p_point closestPair(const vector<point>& px,const vector<point>& py,double& clos
   }
 
   closest_distance=min_closest_distance;
+  //  cout<<min_closest_pair.first.first<<", "<<min_closest_pair.first.second<<endl;
+  //  cout<<min_closest_pair.second.first<<", "<<min_closest_pair.second.second<<endl;
   return min_closest_pair;
 
 }
@@ -123,10 +129,14 @@ p_point computeBase(const vector<point>& px,const vector<point>& py,double& clos
 }
 
 double computeDistance(const point& a,const point& b) {
-  return sqrt(pow((double)(a.first-b.first),2)+ pow((double)(a.second-b.second),2));
+
+  double distance= sqrt(pow((double)(a.first-b.first),2)+ pow((double)(a.second-b.second),2));
+  //  cout<<"Im computing distance for ("<<a.first<<", "<<a.second<<") and ("<<b.first<<", "<<b.second<<"): "<<distance<<endl;
+  return distance;
 }
 
 p_point closestSplitPair(const vector<point>& px,const vector<point>& py,double& closest_distance,double min_distance) {
+  //  cout<<"inside split\n";
   vector<point> sy;
   size_t n=px.size();
   p_point closest_pair;
@@ -144,14 +154,15 @@ p_point closestSplitPair(const vector<point>& px,const vector<point>& py,double&
   size_t len=sy.size();
   len=(len>7)?(len-7):(len);
   for(int i=0; i<len; ++i) {
-    for(int j=0;j<7 && (i+j)<len;++j) {
+    for(int j=1;j<=7 && (i+j)<len;++j) {
       best_so_far=computeDistance(sy[i],sy[i+j]);
       if(best_so_far<closest_distance) {
+	//	cout<<"inside\n";
 	closest_distance=best_so_far;
 	closest_pair.first=sy[i];
 	closest_pair.second=sy[i+j];
       }
     }
   }
-
+  return closest_pair;
 }

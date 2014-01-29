@@ -49,6 +49,7 @@ void loadFile(ifstream& input,vector<point>& p) {
 
 double computeDistance(const point& x,const point& y) {
   double distance=sqrt(pow((x.first-y.first),2) + pow((x.second-y.second),2));
+  //  cout<<"Im computing distance: "<<distance<<endl;
   return distance;
 }
 
