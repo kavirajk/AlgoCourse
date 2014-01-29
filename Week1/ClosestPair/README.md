@@ -8,7 +8,7 @@ This problem has application in traffic-control systems. A system for controllin
 ### Naive Solution (brute force): `Run time: O(n^2)`
 
 
-### Better Solution (Quick Sort): `Run time: O(nlogn)
+### Better Solution (closest_pair algorithm): `Run time: O(nlogn)`
 
 Uses divide and conquer approach.  
 
