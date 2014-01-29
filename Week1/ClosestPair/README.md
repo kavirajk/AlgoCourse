@@ -10,7 +10,7 @@ This problem has application in traffic-control systems. A system for controllin
 
 ### Better Solution (closest_pair algorithm): `Run time: O(nlogn)`
 
-Uses divide and conquer approach.  
+Uses divide and conquer approach. One of the coolest divide and conquer algorithm. Check out the course video for detail study. 
 
 ###Benchmark:
 <pre>
