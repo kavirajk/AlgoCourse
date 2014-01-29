@@ -3,14 +3,14 @@ To find the closest pair of points in the collection of given points (say P). Th
 [euclidiean distance](http://en.wikipedia.org/wiki/Euclidean_distance).
 
 ###Motivation:
-Sorting is one of the most fundamental problem in computer science. 
+This problem has application in traffic-control systems. A system for controlling sea or air traffic might need to identify the two closest vehicles in order to detect potential collisions.
 
 ### Naive Solution (brute force): `Run time: O(n^2)`
 
 
-### Better Solution (Quick Sort): `Run time: O(nlogn) "on Average"`
+### Better Solution (Quick Sort): `Run time: O(nlogn)
 
-Uses divide and conquer approach. Partioning of an array based on the pivot element is the key idea here. 
+Uses divide and conquer approach.  
 
 ###Benchmark:
 <pre>
