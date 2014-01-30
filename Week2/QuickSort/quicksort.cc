@@ -22,10 +22,7 @@ int main() {
 
   copy(istream_iterator<int>(input),istream_iterator<int>(),back_inserter(v));
 
-
   qsort(v,0,v.size());
-
-
 
   copy(v.begin(),v.end(),ostream_iterator<int>(output,"\n"));
 
@@ -36,9 +33,7 @@ void qsort(vector<int>& v,int lower_limit,int higher_limit) {
   if(lower_limit>=higher_limit-1)
     return;
   int l= partition(v,lower_limit,higher_limit);
-  //  cout<<"pivot index: "<<l<<endl;
   qsort(v,lower_limit,l);
-  //  cout<<"im here\n";
   qsort(v,l+1,higher_limit);
 }
 
@@ -53,7 +48,5 @@ int partition(vector<int>& v,int lower_limit,int higher_limit) {
     }
   }
   swap(v[lower_limit],v[i-1]);
-  //  copy(v.begin()+lower_limit,v.begin()+higher_limit,ostream_iterator<int>(cout,", "));
-  //  cout<<endl;
   return i-1;
 }
