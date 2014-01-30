@@ -25,7 +25,6 @@ int main() {
 
 
   qsort(v,0,v.size());
-  cout<<"im here\n";
 
   copy(v.begin(),v.end(),ostream_iterator<int>(output,"\n"));
 
@@ -33,10 +32,10 @@ int main() {
 }
 
 void qsort(vector<int>& v,size_t lower_limit,size_t higher_limit) {
-  if(lower_limit>=higher_limit)
+  if(lower_limit>=higher_limit-1)
     return;
   int l= partition(v,lower_limit,higher_limit);
-  qsort(v,lower_limit,l-1);
+  qsort(v,lower_limit,l);
   qsort(v,l+1,higher_limit);
 }
 
@@ -49,6 +48,8 @@ int partition(vector<int>& v,size_t lower_limit,size_t higher_limit) {
       i++;
     }
   }
-  swap(v[lower_limit],v[i]);
+  swap(v[lower_limit],v[i-1]);
+  copy(v.begin()+lower_limit,v.begin()+higher_limit,ostream_iterator<int>(cout,", "));
+  cout<<endl;
   return i;
 }
