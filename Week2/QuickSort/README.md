@@ -13,5 +13,18 @@ Uses divide and conquer approach. Partioning of an array based on the pivot elem
 
 ###Benchmark:
 <pre>
+bash-4.2$ g++ naive.cc -o naive
+bash-4.2$ g++ quicksort.cc -o qsort
 
+bash-4.2$ time ./naive
+
+real    2m4.070s
+user    1m35.734s
+sys     0m0.318s
+
+bash-4.2$ time ./qsort 
+
+real    0m0.172s
+user    0m0.064s
+sys     0m0.036s
 </pre>
