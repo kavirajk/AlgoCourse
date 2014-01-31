@@ -10,7 +10,8 @@ using namespace std;
 const string i_file="data.txt";
 const string o_file="output_better.txt";
 
-int partition(vector<int>& v,int lower_limit,int higher_limit);
+int choosePivot(int low,int high);
+int partition(int pivot,vector<int>& v,int lower_limit,int higher_limit);
 void qsort(vector<int>& v,int lower_limit,int higher_limit);
 
 int main() {
@@ -32,13 +33,17 @@ int main() {
 void qsort(vector<int>& v,int lower_limit,int higher_limit) {
   if(lower_limit>=higher_limit-1)
     return;
-  int l= partition(v,lower_limit,higher_limit);
+  int n=higher_limit-lower_limit+1;
+  int pivot=choosePivot(lower_limit,higher_limit);
+  
+  int l= partition(pivot,v,lower_limit,higher_limit);
   qsort(v,lower_limit,l);
   qsort(v,l+1,higher_limit);
 }
 
-int partition(vector<int>& v,int lower_limit,int higher_limit) {
+int partition(int pivot,vector<int>& v,int lower_limit,int higher_limit) {
 
+  //  cout<<"Pivot: "<<pivot<<endl;
   int i=lower_limit+1;
   size_t n=higher_limit;
   for(int j=lower_limit+1;j<n; ++j) {
@@ -49,4 +54,8 @@ int partition(vector<int>& v,int lower_limit,int higher_limit) {
   }
   swap(v[lower_limit],v[i-1]);
   return i-1;
+}
+
+int choosePivot(int l,int h) {
+  return l+(rand()%(h-l+1));
 }
