@@ -24,7 +24,7 @@ sys     0m0.318s
 
 bash-4.2$ time ./qsort 
 
-real    0m0.172s
-user    0m0.064s
-sys     0m0.036s
+real    0m0.122s
+user    0m0.081s
+sys     0m0.016s
 </pre>
