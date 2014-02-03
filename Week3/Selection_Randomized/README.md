@@ -15,7 +15,7 @@ But you know what?. Slection problem is more fundametal than sorting. So, can we
 
 ### Better Solution (Quick Sort): `Run time: O(n) "on Average"`
 
-Here we going to solve selection problem in <code>O(n)</code> time. The first time when I hear this it was un-belivable. How could this be posibly solved with time <code>O(n)</code>, the same time needed just to scan or read the complete input. Ever since, its is one of the coolest algorithm I ever learnt.
+Here we going to solve selection problem in <code>O(n)</code> time. The first time when I hear this it was un-belivable. How could this be posibly solved with time <code>O(n)</code>, the same time needed just to scan or read the complete input. Another cool thing is, this algorithm is "in-place" i.e it doesn't require any extra memory space. Its is one of the coolest algorithm I ever learnt.
 
 Here we are going to use "Partition sub-routine" that we used in quick sort and piggyback on it. See course lecture for explanation.
 
