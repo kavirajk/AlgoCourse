@@ -22,17 +22,18 @@ Here we are going to use "Partition sub-routine" that we used in quick sort and 
 ###Benchmark:
 <pre>
 bash-4.2$ g++ naive.cc -o naive
-bash-4.2$ g++ quicksort.cc -o qsort
-
+bash-4.2$ g++ RSelect.cc -o RSelect
 bash-4.2$ time ./naive
 
-real    2m4.070s
-user    1m35.734s
-sys     0m0.318s
+real    0m0.767s
+user    0m0.657s
+sys     0m0.072s
+bash-4.2$ 
+bash-4.2$ 
+bash-4.2$ time ./RSelect
 
-bash-4.2$ time ./qsort 
-
-real    0m0.122s
-user    0m0.081s
-sys     0m0.016s
+real    0m0.297s
+user    0m0.228s
+sys     0m0.042s
+bash-4.2$ 
 </pre>
