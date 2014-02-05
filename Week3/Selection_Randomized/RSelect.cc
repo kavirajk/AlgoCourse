@@ -26,19 +26,21 @@ int main() {
 
   size_t i=getRandom_i(v.size()); // choosing "i" as random for ith order statistic
 
-  int iValue=Rselect(v,0,v.size(),i); // 0th smallest is 1st smallest, according to client
+  int iValue=Rselect(v,0,v.size(),i-1); //passing (i-1) instead of i because, 0th smallest is 1st smallest, according to client
   
-  cout<<i<<"th Smallest number: "<<iValue<<endl;
+  //  cout<<i<<"th Smallest number: "<<iValue<<endl;
+
+  output<<i<<" "<<iValue<<endl;
 
   return 0;
 }
 
 size_t getRandom_i(size_t size) {
-  return rand()%size; // "size+1", becoz we nee random "i" from 1 to n inclusive
+  return (rand()%size)+1; // Choosing random from 1 to size inclusive( no zeros allowed)
 }
 
 size_t choosePivot(int l_limit,int h_limit) {
-  return l_limit+ getRandom_i(h_limit-l_limit);
+  return l_limit+ getRandom_i(h_limit-l_limit)-1; // Choose pivot from l_limit to h_limit(exclusive) as pivot ranges from 0 to size-1
 }
 
 size_t Partition(vector<int>& v,int l_limit,int h_limit) {
@@ -57,11 +59,6 @@ size_t Partition(vector<int>& v,int l_limit,int h_limit) {
 
 int Rselect(vector<int>& v,int l_limit,int h_limit,int i) {
   size_t len=h_limit-l_limit+1;
-  /*  if(l_limit==0 && h_limit==0) { // To handle empty vector as len=1 in that case
-    cout<<"Empty vector. Fatal Error. Terminating...\n";
-    exit(1);
-    }*/
-  // copy(v.begin(),v.end(),ostream_iterator<int>(cout,", "));
   if(len==1)
     return v[l_limit];
 
@@ -69,14 +66,13 @@ int Rselect(vector<int>& v,int l_limit,int h_limit,int i) {
   swap(v[pivot],v[l_limit]);
   
   size_t pos= Partition(v,l_limit,h_limit);
- 
-  //  cout<<"here\n";
-  if(pos == i) {
+
+    if(pos == i) {
     return v[pos];
   }
   if(pos > i) {
     return Rselect(v,l_limit,pos,i);
   } else {
-    return Rselect(v,pos+1,h_limit,i-pos+1);
+    return Rselect(v,pos+1,h_limit,i);
   }
 }
