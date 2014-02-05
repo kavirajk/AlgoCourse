@@ -5,10 +5,10 @@ Sort the given array in ascending order. Such that for all i<j, A[i] < A[j]
 Sorting is one of the most fundamental problem in computer science. Merge sort is 
 better than naive sorting technique like insertion, selection or bubble sort.
 
-### Naive Solution (brute force): `Run time: O(n^2)`
+### Naive Solution (brute force): <code>Run time: O(n<sup>2</sup>)</code>
 
 
-### Better Solution (Merge Sort): `Run time: O(nlogn)`
+### Better Solution (Merge Sort): <code>Run time: O(nlogn)</code>
 
 Uses divide and conquer 
 
