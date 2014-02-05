@@ -5,7 +5,7 @@ e.g: Given array, find the ith smallest element.
 ###Motivation:
 Its one of the very fundametal problems that comes all the time in CS. For e.g Slection problem most often act as the subproblem in solving very complex problem like nearest neighbor problem, shortest path problem etc..
 
-### Naive Solution (Sorting the input, return ith element): `Run time: O(n log n)`
+### Naive Solution (Sorting return ith element): `Run time: O(n log n)`
 
 One of the straight forward approach to handle this selection problems is to sort the given array and return ith element.
 Since any comparison-based sorting algorithm can never be faster than <code>O(n log n)</code>, this selection problem would also end up with the same time complexity <code>O(n log n)</code>.
