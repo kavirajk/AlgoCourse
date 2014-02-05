@@ -23,13 +23,13 @@ Here we are going to use "Partition sub-routine" that we used in quick sort and 
 <pre>
 bash-4.2$ g++ naive.cc -o naive
 bash-4.2$ g++ RSelect.cc -o RSelect
+
 bash-4.2$ time ./naive
 
 real    0m0.767s
 user    0m0.657s
 sys     0m0.072s
-bash-4.2$ 
-bash-4.2$ 
+
 bash-4.2$ time ./RSelect
 
 real    0m0.297s
