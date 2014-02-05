@@ -4,7 +4,7 @@ Multiplication of two n-digit integer.(So simple right??).
 ###Motivation:
 Why study karatsubha algorithm after all?. The secret is it is faster than the one we learned in grade school.
 
-### Naive Solution (grade school): `Run time: O(n^2)`
+### Naive Solution (grade school): <code>Run time: O(n<sup>2</sup>) </code>
 
 <pre>
    5678
@@ -19,14 +19,14 @@ Why study karatsubha algorithm after all?. The secret is it is faster than the o
 
 </pre>
 
-### Better Solution ([Karatsubha](http://en.wikipedia.org/wiki/Karatsuba_algorithm)): `Run time: O(n^1.585)`
+### Better Solution ([Karatsubha](http://en.wikipedia.org/wiki/Karatsuba_algorithm)): <code>Run time: O(n<sup>1.585</sup>)</code>
 
 <pre>
 Let X and Y be two n-digit integers
 According to karatsubha,
-X = 10^n/2*A + B
-Y = 10^n/2*C + D
-X * Y = 10^n(AC) + 10^n/2(bc+ad) + bd
+X = 10<sup>n/2</sup> * A + B
+Y = 10<sup>n/2</sup> * C + D
+X * Y = 10<sup>n</sup> (AC) + 10<sup>n/2</sup> (bc+ad) + bd
 E.g:
 X = 5678
 Y = 1234
