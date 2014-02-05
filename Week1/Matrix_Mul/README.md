@@ -12,7 +12,7 @@ for(int i=0;i &lt; n;++i)
       c[i][j]+=a[i][k]*b[k][j];
 
 </pre>
-### Better Solution ([StrassenAlgorithm](http://en.wikipedia.org/wiki/Strassen_algorithm)): <code>Run time: O(n^2.8)</code>
+### Better Solution ([StrassenAlgorithm](http://en.wikipedia.org/wiki/Strassen_algorithm)): <code>Run time: O(n<sup>2.8</sup>)</code>
 We use the divide and conquer approach to multiply two matrix of dimensions n x n. Strassen Algorithm is very clear and
 totally non-obvious algorithm in solving this problem with better runtime than the naive one.
 
