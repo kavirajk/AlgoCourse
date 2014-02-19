@@ -5,7 +5,8 @@ e.g: Given array, find the i<sup>th</sup> smallest element.
 ###Motivation:
 Its one of the very fundametal problems that comes all the time in CS. For e.g Slection problem most often act as the subproblem in solving very complex problem like nearest neighbor problem, shortest path problem etc..
 
-### Naive Solution (Sort and return i<sup>th</sup> element): <code>Run time: O(n log n)</code>
+### Naive Solution : <code>Run time: O(n log n)</code>
+#####Basic Idea: Sort and return i<sup>th</sup> element
 
 One of the straight forward approach to handle this selection problems is to sort the given array and return ith element.
 Since any comparison-based sorting algorithm can never be faster than <code>O(n log n)</code>, this selection problem would also end up with the same time complexity <code>O(n log n)</code>.
