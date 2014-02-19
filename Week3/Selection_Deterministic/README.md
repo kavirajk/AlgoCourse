@@ -21,7 +21,7 @@ ever learn in CS. Only difference between randomized and determinstic is, here w
 we use "median of medians" as pivot(see course video. I bet you will enjoy it.)
 
 ###Benchmark:
-Here I am going to do benchmark between randomized and deterministic algorithm.
+Here I am going to do benchmark over all the three naive, randomized and deterministic algorithms.
 <pre>
 bash-4.2$ g++ naive.cc -o naive
 bash-4.2$ g++ DSelect.cc -o DSelect
