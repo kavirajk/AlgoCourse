@@ -25,7 +25,9 @@ int main() {
 
   qsort(v,0,v.size());
 
+
   copy(v.begin(),v.end(),ostream_iterator<int>(output,"\n"));
+
 
   return 0;
 }
@@ -33,7 +35,7 @@ int main() {
 void qsort(vector<int>& v,int lower_limit,int higher_limit) {
   if(lower_limit>=higher_limit-1)
     return;
-  int n=higher_limit-lower_limit+1;
+  int n=higher_limit-lower_limit;
   int pivot=choosePivot(lower_limit,higher_limit);
   //  cout<<"pivot: "<<v[pivot]<<endl;
   swap(v[lower_limit],v[pivot]);
