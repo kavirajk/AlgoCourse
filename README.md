@@ -1,7 +1,7 @@
 ###Algorithm Course from Coursera.org
 > Kaviraj
 
-This repo contains implementation of programs that are taught in [Stanford Algorithm Course](https://www.coursera.org/course/algo).It is only for learning and education purpose.Contributions are welcome.
+This repo contains implementation of programs that are taught in [Stanford Algorithm Course](https://www.coursera.org/course/algo).It is only for learning and education purpose.Contributions to bug fix or enhancement are welcome.
 
 ###README.md Contents
 Every problem in this repo have README.md that will help in understanding solution to the problem with following sections.
