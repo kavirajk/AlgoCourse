@@ -1,91 +1,56 @@
-#include <iostream>
-#include <fstream>
-#include <vector>
-#include <iterator>
-#include <algorithm>
-#include <cmath>
+#include<iostream>
+#include<cstdio>
+#include<algorithm>
+#include<cmath>
+#include<iterator>
+#include<vector>
 
 using namespace std;
 
-const string i_file="data.txt";
-const string o_file="output_naive.txt";
+struct integers {
+  string first;
+  string second;
+};
 
-long naive(long a,long b);
-
-int main() {
-  ifstream input(i_file.c_str());
-  ofstream output(o_file.c_str());
-  long x,y;
-  while(input>>x>>y) {
-    output<<naive(x,y)<<endl;
+long num(string s) {
+  long n=0;
+  for(int i=0;i<s.size();++i) {
+    n=n*10+(s[i]-'0');
   }
-
-  input.close();
-  output.close();
-
-  return 0;
-
+  return n;
 }
 
-long naive(long a,long b ) {
-  //  cout<<"X: "<<a<<", Y: "<<b<<endl;
-  vector<long> x;
-  vector<long> y;
-  while(a) {
-    x.push_back(a%10);
-    a/=10;
-  }
-  while(b) {
-    y.push_back(b%10);
-    b/=10;
-  }
-
-  reverse(x.begin(),x.end());
-  reverse(y.begin(),y.end());
-
-  /*  cout<<"X: ";
-  copy(x.begin(),x.end(),ostream_iterator<int>(cout,", "));
-  cout<<endl;
-
-  cout<<"Y: ";
-  copy(y.begin(),y.end(),ostream_iterator<int>(cout,", "));
-  cout<<endl;*/
-
-
-  long final_product,row_product,single_product,carry,last_digit;
-  final_product=0;
-  single_product=0;
-  carry=0;
-  last_digit=0;
-
-  int i=y.size()-1;
-  int j=x.size()-1;
-
-
-  int c=0;
-
-  for(;i>=0;--i) {
-    row_product=0;
-    int c1=0;
-    for(j=x.size()-1;j>=0;--j) {
-      single_product=y[i]*x[j]+carry;
-      //      cout<<"single prod: "<<single_product<<endl;
-      //      row_product+=carry;
-      //cout<<"row_product: "<<row_product<<endl;
-      last_digit=single_product%10;
-      //      cout<<"last_digit: "<<last_digit<<endl;
-      carry=(single_product - last_digit)/10;
-      //      cout<<"carry: "<<carry<<endl;
-      row_product=row_product+(last_digit*pow(10,c1++));
-      //      cout<<"row prod: "<<row_product<<endl;
+long integer_multiplication(string s1,string s2) {
+  long f_prod=0;
+  string c_prod="";
+  for(int i=s1.size()-1;i>=0;--i) { // b'coz mul takes place from 1's bit, 10's bit and so on
+    c_prod="";int s=0,c=0;
+    for(int j=s2.size()-1;j>=0;--j) {
+      s=(s1[i]-'0')*(s2[j]-'0')+c; // single digit multiplication
+      c=s/10;			   // carry
+      c_prod+=(s%10+'0');	   // current row product
     }
-    row_product=(carry*pow(10,c1))+row_product;
-    final_product=row_product*(pow(10,c++))+final_product;
-    //    cout<<"final prod: "<<final_product<<endl;
-    carry=0;
+    c_prod+=(c+'0'); // need to add final carry
+    reverse(c_prod.begin(),c_prod.end()); // need to reverse the current row product
+    f_prod+=num(c_prod)*pow(10,s1.size()-1-i);
   }
-  //  cout<<endl<<endl;
+  return f_prod;
+}
 
-  return final_product;
+int main() {
+  freopen("data.txt","r",stdin);
+  freopen("output_naive.txt","w",stdout);
 
+  vector<integers> input;
+  string a,b;
+  while(cin>>a>>b) {
+    integers t;
+    t.first=a;
+    t.second=b;
+    input.push_back(t);
+  }
+  for(int i=0;i<input.size();++i) {
+    cout<<integer_multiplication(input[i].first,input[i].second)<<endl;
+  }
+  return 0;
 }
